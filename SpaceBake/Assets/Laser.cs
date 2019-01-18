@@ -18,7 +18,7 @@ public class Laser : MonoBehaviour
 	    Ray pointer = new Ray(ray.transform.position, ray.transform.forward);
 
 	    ray.SetPosition(0, pointer.origin);
-	    ray.SetPosition(1, pointer.origin + pointer.direction * 500.0f);
+	    ray.SetPosition(1, pointer.origin + pointer.direction * 1f);
 
     }
 }
