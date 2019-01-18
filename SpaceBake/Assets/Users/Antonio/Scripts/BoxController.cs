@@ -2,15 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class deleteMe4 : MonoBehaviour {
-
+public class BoxController : MonoBehaviour
+{
+    private Animator anim;
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
+
+    private void HydrogenCrateOpen()
+    {
+
+    }
 }

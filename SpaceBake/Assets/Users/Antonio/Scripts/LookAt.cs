@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class deleteMe1 : MonoBehaviour {
-
+public class LookAt : MonoBehaviour
+{
+    public Transform Camera;
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+        transform.LookAt(Camera);	
 	}
 }
