@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SpaceShuttle.unity
     guid: 0dfa8ad9ae40df3449c3f5d41e9a9eee
-  - enabled: 1
+  - enabled: 0
     path: Assets/Users/Anthony/Shuttle Scene.unity
     guid: 27f601d3d0ddc364ea85ed56e74e1a27
   m_configObjects: {}
