@@ -740,6 +740,7 @@ MonoBehaviour:
   nitrogenMat: {fileID: 2100000, guid: 8a9add2e689ef754ca17403768d069ab, type: 2}
   carbonMat: {fileID: 2100000, guid: 10323daeee503be45a5f375811bce339, type: 2}
   oxygenMat: {fileID: 2100000, guid: ce78e5d5d69269042ad271c6f6e854ad, type: 2}
+  controller: {fileID: 1705919777}
 --- !u!4 &417868791
 Transform:
   m_ObjectHideFlags: 0

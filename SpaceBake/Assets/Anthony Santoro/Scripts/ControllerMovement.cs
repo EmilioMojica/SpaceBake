@@ -10,6 +10,8 @@ public class ControllerMovement : MonoBehaviour {
 
     public Material hydrogenMat, nitrogenMat, carbonMat, oxygenMat;
 
+    public GameObject controller;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -24,8 +26,7 @@ public class ControllerMovement : MonoBehaviour {
 
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) //(OVRInput.Button)//Input.GetMouseButtonDown(0))//OVRInput.GetDown(OVRInput.Button.One))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 100.0f))
+            if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, 100.0f))
             {
                 Debug.Log("You selected the " + hit.transform.name); // ensure you picked right object
 
@@ -45,8 +46,8 @@ public class ControllerMovement : MonoBehaviour {
 
         if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger)) //(Input.GetMouseButtonUp(0))//OVRInput.GetUp(OVRInput.Button.One))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 100.0f))
+            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, 100.0f))
             {
                 Debug.Log("RIP MY HEAD");
 
