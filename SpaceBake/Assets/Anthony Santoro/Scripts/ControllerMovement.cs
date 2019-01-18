@@ -8,18 +8,35 @@ public class ControllerMovement : MonoBehaviour {
     public GameObject Hydrogen, Nitrogen, Oxygen, Carbon;
     public GameObject selectPosition;
 
-    public Material hydrogenMat, nitrogenMat, carbonMat, oxygenMat;
+    public Material hydrogenMat, nitrogenMat, carbonMat, oxygenMat, emptyAtom;
 
     public GameObject controller;
 
+    public GameObject[] defaultSkin;
+    public int skinLength;
+
+    private int skinCheck;
+
 	// Use this for initialization
 	void Start () {
-		
+        skinLength = defaultSkin.Length;
 	}
 
     // Update is called once per frame
     void Update()
     {
+        foreach (GameObject skin in defaultSkin)
+        {
+            if (skin.GetComponent<Renderer>().material != emptyAtom)
+            {
+                skinCheck++;
+            }
+        }
+
+        if(skinCheck == skinLength)
+        {
+            Debug.Log("You Win!");
+        }
 
         RaycastHit hit;
         transform.rotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
