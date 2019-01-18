@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Hydrogen
+  - Nitrogen
+  - Oxygen
+  - Carbon
   layers:
   - Default
   - TransparentFX
