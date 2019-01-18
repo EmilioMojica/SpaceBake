@@ -5,20 +5,22 @@ public class ResourceBars : MonoBehaviour
 {
     [SerializeField] private float _aminoAcidAddedValue;
     private float _aminoAcidCurValue;
-    private readonly float _aminoAcidMaxValue = 180;
+    private readonly float _aminoAcidMaxValue = 120;
     [SerializeField] private GameObject _aminoAcidSlider;
     [SerializeField] private float _ethanolAddedValue;
     private float _ethanolCurValue;
-    private readonly float _ethanolMaxValue = 180;
+    private readonly float _ethanolMaxValue = 120;
     [SerializeField] private GameObject _ethanolSlider;
     [SerializeField] private float _foodAddedValue;
     private float _foodCurValue;
-    private readonly float _foodMaxValue = 180;
+    private readonly float _foodMaxValue = 120;
     [SerializeField] private GameObject _foodSlider;
     [SerializeField] private float _waterAddedValue;
     private float _waterCurValue;
-    private readonly float _waterMaxValue = 180;
+    private readonly float _waterMaxValue = 120;
     [SerializeField] private GameObject _waterSlider;
+
+    private float _gameWinTimer;
 
     // Use this for initialization
     private void Start()
@@ -33,11 +35,12 @@ public class ResourceBars : MonoBehaviour
     private void Update()
     {
         calculateBarValues();
+        CalculateWin();
 
-        _foodSlider.GetComponent<Image>().fillAmount = _foodCurValue / 180;
-        _waterSlider.GetComponent<Image>().fillAmount = _waterCurValue / 180;
-        _ethanolSlider.GetComponent<Image>().fillAmount = _ethanolCurValue / 180;
-        _aminoAcidSlider.GetComponent<Image>().fillAmount = _aminoAcidCurValue / 180;
+        _foodSlider.GetComponent<Image>().fillAmount = _foodCurValue / 120;
+        _waterSlider.GetComponent<Image>().fillAmount = _waterCurValue / 120;
+        _ethanolSlider.GetComponent<Image>().fillAmount = _ethanolCurValue / 120;
+        _aminoAcidSlider.GetComponent<Image>().fillAmount = _aminoAcidCurValue / 120;
     }
 
     public void AddO2()
@@ -75,5 +78,16 @@ public class ResourceBars : MonoBehaviour
         _waterCurValue -= Time.deltaTime;
         _ethanolCurValue -= Time.deltaTime;
         _aminoAcidCurValue -= Time.deltaTime;
+    }
+
+    void CalculateWin()
+    {
+        _gameWinTimer += Time.deltaTime;
+
+        if (_gameWinTimer >= 180)
+        {
+            //TODO: Game win text.
+
+        }
     }
 }
