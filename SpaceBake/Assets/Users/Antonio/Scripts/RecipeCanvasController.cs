@@ -15,7 +15,7 @@ public class RecipeCanvasController : MonoBehaviour
 	void Start ()
     {
         RecipeNumber = 1;
-        defaultRecipeCanvas.SetActive(false);
+        TurnOffCanvases();
 	}
 	
 	// Update is called once per frame
@@ -46,31 +46,81 @@ public class RecipeCanvasController : MonoBehaviour
 
     private void TurnOffCanvases()
     {
-
+        defaultRecipeCanvas.SetActive(false);
+        recipeCanvas1.SetActive(false);
+        recipeCanvas2.SetActive(false);
+        recipeCanvas3.SetActive(false);
+        recipeCanvas4.SetActive(false);
     }
 
     private void DefaultCanvas()
     {
-        
+        defaultRecipeCanvas.SetActive(true);
+        recipeCanvas1.SetActive(false);
+        recipeCanvas2.SetActive(false);
+        recipeCanvas3.SetActive(false);
+        recipeCanvas4.SetActive(false);
     }
 
     private void Recipe1()
     {
-
+        defaultRecipeCanvas.SetActive(false);
+        recipeCanvas1.SetActive(true);
+        recipeCanvas2.SetActive(false);
+        recipeCanvas3.SetActive(false);
+        recipeCanvas4.SetActive(false);
     }
 
     private void Recipe2()
     {
-
+        defaultRecipeCanvas.SetActive(false);
+        recipeCanvas1.SetActive(false);
+        recipeCanvas2.SetActive(true);
+        recipeCanvas3.SetActive(false);
+        recipeCanvas4.SetActive(false);
     }
 
     private void Recipe3()
     {
-
+        defaultRecipeCanvas.SetActive(false);
+        recipeCanvas1.SetActive(false);
+        recipeCanvas2.SetActive(false);
+        recipeCanvas3.SetActive(true);
+        recipeCanvas4.SetActive(false);
     }
 
     private void Recipe4()
     {
+        defaultRecipeCanvas.SetActive(false);
+        recipeCanvas1.SetActive(false);
+        recipeCanvas2.SetActive(false);
+        recipeCanvas3.SetActive(false);
+        recipeCanvas4.SetActive(true);
+    }
 
+    public void Up()
+    {
+        if (RecipeNumber >= 5)
+        {
+            RecipeNumber = 1;
+        }
+
+        else
+        {
+            RecipeNumber++;
+        } 
+    }
+
+    public void Down()
+    {
+        if (RecipeNumber <= 1)
+        {
+            RecipeNumber = 5;
+        }
+
+        else
+        {
+            RecipeNumber--;
+        }
     }
 }
