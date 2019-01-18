@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class RecipeCanvasController : MonoBehaviour
 {
+    public GameObject defaultRecipeCanvas; 
+    public GameObject recipeCanvas1;
+    public GameObject recipeCanvas2;
+    public GameObject recipeCanvas3;
+    public GameObject recipeCanvas4; 
     private int RecipeNumber; 
 
 	// Use this for initialization
 	void Start ()
     {
         RecipeNumber = 1;
+        defaultRecipeCanvas.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -38,10 +44,14 @@ public class RecipeCanvasController : MonoBehaviour
         }
     }
 
+    private void TurnOffCanvases()
+    {
+
+    }
 
     private void DefaultCanvas()
     {
-
+        
     }
 
     private void Recipe1()
