@@ -37,6 +37,11 @@ public class ResourceBars : MonoBehaviour
         calculateBarValues();
         CalculateWin();
 
+        _foodCurValue = Random.Range(80f, 120);
+        _waterCurValue = Random.Range(80f, 120);
+        _ethanolCurValue = Random.Range(80f, 120);
+        _aminoAcidCurValue = Random.Range(80f, 120);
+
         _foodSlider.GetComponent<Image>().fillAmount = _foodCurValue / 120;
         _waterSlider.GetComponent<Image>().fillAmount = _waterCurValue / 120;
         _ethanolSlider.GetComponent<Image>().fillAmount = _ethanolCurValue / 120;
