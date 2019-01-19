@@ -14,8 +14,7 @@ public class Laser : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-	    Transform rightHandAnchor; // Assign to the proper transform
-	    Ray pointer = new Ray(ray.transform.position, ray.transform.forward);
+	    Ray pointer = new Ray(gameObject.transform.position, gameObject.transform.forward);
 
 	    RaycastHit hit;
 
@@ -24,6 +23,11 @@ public class Laser : MonoBehaviour
 	        //ray.positionCount = hit.distance;
             ray.SetPosition(0, pointer.origin);
 	        ray.SetPosition(1, pointer.origin + pointer.direction * hit.distance); //pointer.direction);
+	    }
+	    else
+	    {
+	        ray.SetPosition(0, pointer.origin);
+	        ray.SetPosition(1, pointer.origin + pointer.direction * 3); //pointer.direction);
 	    }
 	}
 }
