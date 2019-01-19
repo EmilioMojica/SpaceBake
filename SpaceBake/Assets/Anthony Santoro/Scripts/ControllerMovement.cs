@@ -70,28 +70,24 @@ public class ControllerMovement : MonoBehaviour {
                 GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddO2();
                 prefabOxygen.transform.Rotate(Vector3.right * Time.deltaTime);
                 Invoke("ResetAtoms", 2f);
-                skinCheck = 0;
             }
             else if (skinLength == 3)
             {
                 GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddH2O();
                 prefabWater.transform.Rotate(Vector3.right * Time.deltaTime);
                 Invoke("ResetAtoms", 2f);
-                skinCheck = 0;
             }
             else if (skinLength == 10)
             {
                 GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddC2H3NO2();
                 prefabAminoAcid.transform.Rotate(Vector3.right * Time.deltaTime);
                 Invoke("ResetAtoms", 2f);
-                skinCheck = 0;
             }
             else if (skinLength == 9)
             {
                 GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddC2H5OH();
                 prefabEthanol.transform.Rotate(Vector3.right * Time.deltaTime);
                 Invoke("ResetAtoms", 2f);
-                skinCheck = 0;
             }
         }
 
