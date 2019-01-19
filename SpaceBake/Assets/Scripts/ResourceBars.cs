@@ -76,21 +76,21 @@ public class ResourceBars : MonoBehaviour
         }
         if (_waterCurValue >= _waterMaxValue)
             _waterCurValue = _waterMaxValue;
-        else if (_foodCurValue <= 0)
+        else if (_waterCurValue <= 0)
         {
             _gameLoseLives++;
             _waterCurValue = _waterMaxValue;
         }
         if (_ethanolCurValue >= _ethanolMaxValue)
             _ethanolCurValue = _ethanolMaxValue;
-        else if (_foodCurValue <= 0)
+        else if (_ethanolCurValue <= 0)
         {
             _gameLoseLives++;
             _ethanolCurValue = _ethanolMaxValue;
         }
         if (_aminoAcidCurValue >= _aminoAcidMaxValue)
             _aminoAcidCurValue = _aminoAcidMaxValue;
-        else if (_foodCurValue <= 0)
+        else if (_aminoAcidCurValue <= 0)
         {
             _gameLoseLives++;
             _aminoAcidCurValue = _aminoAcidMaxValue;
