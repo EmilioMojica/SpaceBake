@@ -202,12 +202,13 @@ public class ControllerMovement : MonoBehaviour {
                 if (hit.transform.name == "Back Button")
                 {
                     canvasController.Down();
-                    Invoke("ResetAtoms", 0.1f);
+                    ResetAtoms();
                 }
 
                 if (hit.transform.name == "Forward Button")
                 {
-                    Invoke("ResetAtoms", 0.1f);
+                    canvasController.Up();
+                    ResetAtoms();
                 }
             }
         }
