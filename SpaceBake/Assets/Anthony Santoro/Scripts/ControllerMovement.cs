@@ -25,6 +25,8 @@ public class ControllerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        isHeld.transform.position = selectPosition.transform.position;
+
         foreach (GameObject skin in defaultSkin)
         {
             if (skin.GetComponent<Renderer>().material != emptyAtom)
@@ -63,16 +65,16 @@ public class ControllerMovement : MonoBehaviour {
                 Debug.Log("You selected the " + hit.transform.name); // ensure you picked right object
 
                 if(hit.transform.name == "Hydrogen Sphere")
-                    isHeld = (GameObject)Instantiate(Hydrogen, new Vector3(2, 1, 3), Quaternion.identity);
+                    isHeld = (GameObject)Instantiate(Hydrogen, selectPosition.transform.position, Quaternion.identity);
 
                 if (hit.transform.name == "Nitrogen Sphere")
-                    isHeld = (GameObject)Instantiate(Nitrogen, new Vector3(2, 1, 3), Quaternion.identity);
+                    isHeld = (GameObject)Instantiate(Nitrogen, selectPosition.transform.position, Quaternion.identity);
 
                 if (hit.transform.name == "Oxygen Sphere")
-                    isHeld = (GameObject)Instantiate(Oxygen, new Vector3(2, 1, 3), Quaternion.identity);
+                    isHeld = (GameObject)Instantiate(Oxygen, selectPosition.transform.position, Quaternion.identity);
 
                 if (hit.transform.name == "Carbon Sphere")
-                    isHeld = (GameObject)Instantiate(Carbon, new Vector3(2, 1, 3), Quaternion.identity);
+                    isHeld = (GameObject)Instantiate(Carbon, selectPosition.transform.position, Quaternion.identity);
             }
         }
 
