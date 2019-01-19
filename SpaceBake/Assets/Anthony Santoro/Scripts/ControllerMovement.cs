@@ -180,16 +180,24 @@ public class ControllerMovement : MonoBehaviour {
                 {
                     canvasController.Down();
 <<<<<<< HEAD
+<<<<<<< HEAD
                     ResetAtoms();
 =======
 >>>>>>> parent of 562039b... Update ControllerMovement.cs
+=======
+                    Invoke("ResetAtoms", 0.1f);
+>>>>>>> parent of c03bc18... button fix
                 }
 
                 if (hit.transform.name == "Forward Button")
                 {
+<<<<<<< HEAD
                     canvasController.Up();
 <<<<<<< HEAD
                     ResetAtoms();
+=======
+                    Invoke("ResetAtoms", 0.1f);
+>>>>>>> parent of c03bc18... button fix
                 }
 =======
                 }  
