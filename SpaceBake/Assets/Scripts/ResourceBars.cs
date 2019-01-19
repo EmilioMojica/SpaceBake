@@ -25,10 +25,10 @@ public class ResourceBars : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        _foodCurValue = _foodMaxValue;
-        _waterCurValue = _waterMaxValue;
-        _aminoAcidCurValue = _aminoAcidMaxValue;
-        _ethanolCurValue = _ethanolMaxValue;
+        _foodCurValue = Random.Range(80f, 120);
+        _waterCurValue = Random.Range(80f, 120);
+        _ethanolCurValue = Random.Range(80f, 120);
+        _aminoAcidCurValue = Random.Range(80f, 120);
     }
 
     // Update is called once per frame
@@ -36,11 +36,6 @@ public class ResourceBars : MonoBehaviour
     {
         calculateBarValues();
         CalculateWin();
-
-        _foodCurValue = Random.Range(80f, 120);
-        _waterCurValue = Random.Range(80f, 120);
-        _ethanolCurValue = Random.Range(80f, 120);
-        _aminoAcidCurValue = Random.Range(80f, 120);
 
         _foodSlider.GetComponent<Image>().fillAmount = _foodCurValue / 120;
         _waterSlider.GetComponent<Image>().fillAmount = _waterCurValue / 120;
