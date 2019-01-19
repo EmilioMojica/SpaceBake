@@ -24,50 +24,14 @@ public class ControllerMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        skinLength = defaultSkin.Length;
         canvasController = GetComponent<RecipeCanvasController>();
 
         laser = laserobject.GetComponent<Laser>();
-
-        //NCHydrogen.SetActive(false);
-        //NCNitrogen.SetActive(false);
-        //NCOxygen.SetActive(false);
-        //NCCarbon.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        skinLength = defaultSkin.Length;
-
-        foreach (GameObject skin in defaultSkin)
-        {
-            if (skin.GetComponent<Renderer>().material != emptyAtom)
-            {
-                skinCheck++;
-            }
-        }
-
-        if(skinCheck == skinLength)
-        {
-            if (skinLength == 2)
-            {
-                GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddO2();
-            }
-            else if (skinLength == 3)
-            {
-                GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddH2O();
-            }
-            else if (skinLength == 8)
-            {
-                GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddC2H3NO2();
-            }
-            else if (skinLength == 9)
-            {
-                GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddC2H5OH();
-            }
-            }
-
         RaycastHit hit;
         transform.rotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
 
@@ -79,45 +43,26 @@ public class ControllerMovement : MonoBehaviour {
 
                 if (hit.transform.name == "Hydrogen Sphere")
                 {
-                    isHeld = Hydrogen;
+                    isHeld = (GameObject)Instantiate(Hydrogen, selectPosition.transform.position, Quaternion.identity);
                     laser.LightBlue();
-                    //NCHydrogen.SetActive(true);
-                    //NCNitrogen.SetActive(false);
-                    //NCOxygen.SetActive(false);
-                    //NCCarbon.SetActive(false);
                 }
                 
-                else if (hit.transform.name == "Nitrogen Sphere")
+                if (hit.transform.name == "Nitrogen Sphere")
                 {
-                    isHeld = Nitrogen;
+                    isHeld = (GameObject)Instantiate(Nitrogen, selectPosition.transform.position, Quaternion.identity);
                     laser.LightOrange();
-
-                    //NCHydrogen.SetActive(false);
-                    //NCNitrogen.SetActive(true);
-                    //NCOxygen.SetActive(false);
-                    //NCCarbon.SetActive(false);
                 }
 
-                else if(hit.transform.name == "Oxygen Sphere")
+                if(hit.transform.name == "Oxygen Sphere")
                 {
-                    isHeld = Oxygen;
+                    isHeld = (GameObject)Instantiate(Oxygen, selectPosition.transform.position, Quaternion.identity);
                     laser.LightWhite();
-
-                    //NCHydrogen.SetActive(false);
-                    //NCNitrogen.SetActive(false);
-                    //NCOxygen.SetActive(true);
-                    //NCCarbon.SetActive(false);
                 }
 
-                else if(hit.transform.name == "Carbon Sphere")
+                if(hit.transform.name == "Carbon Sphere")
                 {
-                    isHeld = Carbon;
+                    isHeld = (GameObject)Instantiate(Carbon, selectPosition.transform.position, Quaternion.identity);
                     laser.LightBlack();
-
-                    //NCHydrogen.SetActive(false);
-                    //NCNitrogen.SetActive(false);
-                    //NCOxygen.SetActive(false);
-                    //NCCarbon.SetActive(true);
                 }             
             }
         }
@@ -179,21 +124,12 @@ public class ControllerMovement : MonoBehaviour {
                 if (hit.transform.name == "Back Button")
                 {
                     canvasController.Down();
-<<<<<<< HEAD
-                    ResetAtoms();
-=======
->>>>>>> parent of 562039b... Update ControllerMovement.cs
                 }
 
                 if (hit.transform.name == "Forward Button")
                 {
                     canvasController.Up();
-<<<<<<< HEAD
-                    ResetAtoms();
                 }
-=======
-                }  
->>>>>>> parent of 562039b... Update ControllerMovement.cs
             }
         }
     }
