@@ -5,7 +5,7 @@ using UnityEngine;
 public class ControllerMovement : MonoBehaviour {
 
     public GameObject isHeld, isTargetted;
-    public GameObject Hydrogen, Nitrogen, Oxygen, Carbon, NCHydrogen, NCNitrogen, NCOxygen, NCCarbon;
+    public GameObject Hydrogen, Nitrogen, Oxygen, Carbon/*, NCHydrogen, NCNitrogen, NCOxygen, NCCarbon*/;
     public GameObject selectPosition;
 
     [SerializeField] private GameObject laserobject;
@@ -29,10 +29,10 @@ public class ControllerMovement : MonoBehaviour {
 
         laser = laserobject.GetComponent<Laser>();
 
-        NCHydrogen.SetActive(false);
-        NCNitrogen.SetActive(false);
-        NCOxygen.SetActive(false);
-        NCCarbon.SetActive(false);
+        //NCHydrogen.SetActive(false);
+        //NCNitrogen.SetActive(false);
+        //NCOxygen.SetActive(false);
+        //NCCarbon.SetActive(false);
     }
 
     // Update is called once per frame
@@ -116,13 +116,12 @@ public class ControllerMovement : MonoBehaviour {
                     //NCNitrogen.SetActive(false);
                     //NCOxygen.SetActive(false);
                     //NCCarbon.SetActive(true);
-                }
+                }             
+            }
 
-                else
-                {
-                    laser.LightRed();
-                }
-                
+            if (isHeld == null)
+            {
+                laser.LightRed();
             }
         }
 
