@@ -6,7 +6,7 @@ public class Laser : MonoBehaviour
 {
     private LineRenderer ray;
 
-    Color32 Orange = new Color(255, 89, 22);
+    Color32 Orange = new Color(1f, 0.349f, 0.087f);
 
     // Use this for initialization
 	void Start ()

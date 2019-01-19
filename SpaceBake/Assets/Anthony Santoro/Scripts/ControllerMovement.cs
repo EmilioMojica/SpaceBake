@@ -53,6 +53,8 @@ public class ControllerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        skinLength = defaultSkin.Length;
+
         foreach (GameObject skin in defaultSkin)
         {
             if (skin.GetComponent<Renderer>().material != emptyAtom)
@@ -200,13 +202,12 @@ public class ControllerMovement : MonoBehaviour {
                 if (hit.transform.name == "Back Button")
                 {
                     canvasController.Down();
-                    ResetAtoms();
+                    Invoke("ResetAtoms", 0.1f);
                 }
 
                 if (hit.transform.name == "Forward Button")
                 {
-                    canvasController.Up();
-                    ResetAtoms();
+                    Invoke("ResetAtoms", 0.1f);
                 }
             }
         }
