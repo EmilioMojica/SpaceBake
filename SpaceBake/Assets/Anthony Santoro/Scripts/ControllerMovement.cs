@@ -22,14 +22,8 @@ public class ControllerMovement : MonoBehaviour {
 
     private RecipeCanvasController canvasController;
 
-    [SerializeField] private GameObject prefabWater, prefabEthanol, prefabOxygen, prefabAminoAcid;
-
-    // Use this for initialization
-    void Start ()
-    {
-
-        defaultSkin = GameObject.FindGameObjectsWithTag("Atom");
-
+	// Use this for initialization
+	void Start () {
         skinLength = defaultSkin.Length;
         canvasController = GetComponent<RecipeCanvasController>();
 
@@ -39,15 +33,6 @@ public class ControllerMovement : MonoBehaviour {
         //NCNitrogen.SetActive(false);
         //NCOxygen.SetActive(false);
         //NCCarbon.SetActive(false);
-    }
-
-    public void ResetAtoms()
-    {
-        foreach (GameObject skin in defaultSkin)
-        {
-            skin.GetComponent<Renderer>().material = emptyAtom;
-        }
-        defaultSkin = GameObject.FindGameObjectsWithTag("Atom");
     }
 
     // Update is called once per frame
@@ -63,33 +48,25 @@ public class ControllerMovement : MonoBehaviour {
             }
         }
 
-        if (skinCheck == skinLength)
+        if(skinCheck == skinLength)
         {
             if (skinLength == 2)
             {
                 GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddO2();
-                prefabOxygen.transform.Rotate(Vector3.right * Time.deltaTime);
-                Invoke("ResetAtoms", 2f);
             }
             else if (skinLength == 3)
             {
                 GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddH2O();
-                prefabWater.transform.Rotate(Vector3.right * Time.deltaTime);
-                Invoke("ResetAtoms", 2f);
             }
-            else if (skinLength == 10)
+            else if (skinLength == 8)
             {
                 GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddC2H3NO2();
-                prefabAminoAcid.transform.Rotate(Vector3.right * Time.deltaTime);
-                Invoke("ResetAtoms", 2f);
             }
             else if (skinLength == 9)
             {
                 GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddC2H5OH();
-                prefabEthanol.transform.Rotate(Vector3.right * Time.deltaTime);
-                Invoke("ResetAtoms", 2f);
             }
-        }
+            }
 
         RaycastHit hit;
         transform.rotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
@@ -202,14 +179,21 @@ public class ControllerMovement : MonoBehaviour {
                 if (hit.transform.name == "Back Button")
                 {
                     canvasController.Down();
+<<<<<<< HEAD
                     ResetAtoms();
+=======
+>>>>>>> parent of 562039b... Update ControllerMovement.cs
                 }
 
                 if (hit.transform.name == "Forward Button")
                 {
                     canvasController.Up();
+<<<<<<< HEAD
                     ResetAtoms();
                 }
+=======
+                }  
+>>>>>>> parent of 562039b... Update ControllerMovement.cs
             }
         }
     }
