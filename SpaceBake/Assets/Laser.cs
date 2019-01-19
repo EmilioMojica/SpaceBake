@@ -30,4 +30,21 @@ public class Laser : MonoBehaviour
 	        ray.SetPosition(1, pointer.origin + pointer.direction * 3); //pointer.direction);
 	    }
 	}
+
+    public void LightBlue()
+    {
+        ray.material.color = Color.blue;
+    }
+    public void LightWhite()
+    {
+        ray.material.color = Color.white;
+    }
+    public void LightBlack()
+    {
+        ray.material.color = Color.black;
+    }
+    public void LightOrange()
+    {
+        ray.material.color = new Color(255 / 255, 89 / 255, 22 / 255);
+    }
 }
