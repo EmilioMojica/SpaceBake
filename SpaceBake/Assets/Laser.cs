@@ -10,10 +10,11 @@ public class Laser : MonoBehaviour
 	void Start ()
 	{
 	    ray = GetComponent<LineRenderer>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+	    ray.material.color = Color.red;
+    }
+
+    // Update is called once per frame
+    void Update () {
 	    Ray pointer = new Ray(gameObject.transform.position, gameObject.transform.forward);
 
 	    RaycastHit hit;
@@ -46,5 +47,9 @@ public class Laser : MonoBehaviour
     public void LightOrange()
     {
         ray.material.color = new Color(255 / 255, 89 / 255, 22 / 255);
+    }
+    public void LightRed()
+    {
+        ray.material.color = Color.red;
     }
 }
