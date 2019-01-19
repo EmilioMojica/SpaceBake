@@ -25,8 +25,6 @@ public class ControllerMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        isHeld.transform.position = selectPosition.transform.position;
-
         foreach (GameObject skin in defaultSkin)
         {
             if (skin.GetComponent<Renderer>().material != emptyAtom)
