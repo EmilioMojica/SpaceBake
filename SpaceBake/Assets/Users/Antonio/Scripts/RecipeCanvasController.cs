@@ -8,14 +8,15 @@ public class RecipeCanvasController : MonoBehaviour
     public GameObject recipeCanvas1;
     public GameObject recipeCanvas2;
     public GameObject recipeCanvas3;
-    public GameObject recipeCanvas4; 
+    public GameObject recipeCanvas4;
+    public GameObject OxygenCompound, EthanolCompound, WaterCompound, AminoAcidCompound;
     private int RecipeNumber; 
 
 	// Use this for initialization
 	void Start ()
     {
         RecipeNumber = 1;
-        TurnOffCanvases();
+        TurnOffCanvases_Compounds();
 	}
 	
 	// Update is called once per frame
@@ -44,13 +45,18 @@ public class RecipeCanvasController : MonoBehaviour
         }
     }
 
-    private void TurnOffCanvases()
+    private void TurnOffCanvases_Compounds()
     {
         defaultRecipeCanvas.SetActive(false);
         recipeCanvas1.SetActive(false);
         recipeCanvas2.SetActive(false);
         recipeCanvas3.SetActive(false);
         recipeCanvas4.SetActive(false);
+
+        OxygenCompound.SetActive(false);
+        EthanolCompound.SetActive(false);
+        WaterCompound.SetActive(false);
+        AminoAcidCompound.SetActive(false);
     }
 
     private void DefaultCanvas()
@@ -69,6 +75,11 @@ public class RecipeCanvasController : MonoBehaviour
         recipeCanvas2.SetActive(false);
         recipeCanvas3.SetActive(false);
         recipeCanvas4.SetActive(false);
+
+        OxygenCompound.SetActive(true);
+        EthanolCompound.SetActive(false);
+        WaterCompound.SetActive(false);
+        AminoAcidCompound.SetActive(false);
     }
 
     private void Recipe2()
@@ -78,6 +89,11 @@ public class RecipeCanvasController : MonoBehaviour
         recipeCanvas2.SetActive(true);
         recipeCanvas3.SetActive(false);
         recipeCanvas4.SetActive(false);
+
+        OxygenCompound.SetActive(false);
+        EthanolCompound.SetActive(true);
+        WaterCompound.SetActive(false);
+        AminoAcidCompound.SetActive(false);
     }
 
     private void Recipe3()
@@ -87,6 +103,11 @@ public class RecipeCanvasController : MonoBehaviour
         recipeCanvas2.SetActive(false);
         recipeCanvas3.SetActive(true);
         recipeCanvas4.SetActive(false);
+
+        OxygenCompound.SetActive(false);
+        EthanolCompound.SetActive(false);
+        WaterCompound.SetActive(true);
+        AminoAcidCompound.SetActive(false);
     }
 
     private void Recipe4()
@@ -96,6 +117,11 @@ public class RecipeCanvasController : MonoBehaviour
         recipeCanvas2.SetActive(false);
         recipeCanvas3.SetActive(false);
         recipeCanvas4.SetActive(true);
+
+        OxygenCompound.SetActive(false);
+        EthanolCompound.SetActive(false);
+        WaterCompound.SetActive(false);
+        AminoAcidCompound.SetActive(true);
     }
 
     public void Up()
