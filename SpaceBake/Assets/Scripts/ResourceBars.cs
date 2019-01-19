@@ -3,24 +3,26 @@ using UnityEngine.UI;
 
 public class ResourceBars : MonoBehaviour
 {
-    [SerializeField] private float _aminoAcidAddedValue;
+    [SerializeField] private float _aminoAcidAddedValue = 20;
     private float _aminoAcidCurValue;
     private readonly float _aminoAcidMaxValue = 120;
     [SerializeField] private GameObject _aminoAcidSlider;
-    [SerializeField] private float _ethanolAddedValue;
+    [SerializeField] private float _ethanolAddedValue = 20;
     private float _ethanolCurValue;
     private readonly float _ethanolMaxValue = 120;
     [SerializeField] private GameObject _ethanolSlider;
-    [SerializeField] private float _foodAddedValue;
+    [SerializeField] private float _foodAddedValue = 20;
     private float _foodCurValue;
     private readonly float _foodMaxValue = 120;
     [SerializeField] private GameObject _foodSlider;
-    [SerializeField] private float _waterAddedValue;
+    [SerializeField] private float _waterAddedValue = 20;
     private float _waterCurValue;
     private readonly float _waterMaxValue = 120;
     [SerializeField] private GameObject _waterSlider;
 
     private float _gameWinTimer;
+
+    private float _gameLoseLives = 2;
 
     // Use this for initialization
     private void Start()
@@ -67,12 +69,32 @@ public class ResourceBars : MonoBehaviour
     {
         if (_foodCurValue >= _foodMaxValue)
             _foodCurValue = _foodMaxValue;
+        else if (_foodCurValue <= 0)
+        {
+            _gameLoseLives++;
+            _foodCurValue = _foodMaxValue;
+        }
         if (_waterCurValue >= _waterMaxValue)
             _waterCurValue = _waterMaxValue;
+        else if (_foodCurValue <= 0)
+        {
+            _gameLoseLives++;
+            _waterCurValue = _waterMaxValue;
+        }
         if (_ethanolCurValue >= _ethanolMaxValue)
             _ethanolCurValue = _ethanolMaxValue;
+        else if (_foodCurValue <= 0)
+        {
+            _gameLoseLives++;
+            _ethanolCurValue = _ethanolMaxValue;
+        }
         if (_aminoAcidCurValue >= _aminoAcidMaxValue)
             _aminoAcidCurValue = _aminoAcidMaxValue;
+        else if (_foodCurValue <= 0)
+        {
+            _gameLoseLives++;
+            _aminoAcidCurValue = _aminoAcidMaxValue;
+        }
 
         _foodCurValue -= Time.deltaTime * 2.0f;
         _waterCurValue -= Time.deltaTime * 1.25f;
@@ -86,8 +108,10 @@ public class ResourceBars : MonoBehaviour
 
         if (_gameWinTimer >= 180)
         {
-            //TODO: Game win text.
-
+            if (_gameLoseLives >= 2)
+                Debug.Log("You missed the good cake...");
+            else
+                Debug.Log("This cake is huge!!!");
         }
     }
 }

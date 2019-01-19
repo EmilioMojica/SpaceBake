@@ -35,8 +35,23 @@ public class ControllerMovement : MonoBehaviour {
 
         if(skinCheck == skinLength)
         {
-            Debug.Log("You Win!");
-        }
+            if (skinLength == 2)
+            {
+                GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddO2();
+            }
+            else if (skinLength == 3)
+            {
+                GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddH2O();
+            }
+            else if (skinLength == 8)
+            {
+                GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddC2H3NO2();
+            }
+            else if (skinLength == 9)
+            {
+                GameObject.Find("BarScreen").GetComponent<ResourceBars>().AddC2H5OH();
+            }
+            }
 
         RaycastHit hit;
         transform.rotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);

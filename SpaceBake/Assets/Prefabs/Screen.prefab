@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 4548422914104638}
   - component: {fileID: 33020029153773946}
   - component: {fileID: 23599260672522648}
+  - component: {fileID: 114508121448204650}
   m_Layer: 0
   m_Name: Screen
   m_TagString: Untagged
@@ -204,15 +205,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1387983036981970}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000000096363635, y: 0.8968562, z: 0.0015213345}
+  m_LocalRotation: {x: 0, y: 0.3846417, z: 0, w: 0.92306596}
+  m_LocalPosition: {x: 2.097999, y: 4.1429996, z: 1.057}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224716500365232022}
   - {fileID: 224026558376258128}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45.243, z: 0}
 --- !u!23 &23599260672522648
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -364,6 +365,25 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Ethanol
+--- !u!114 &114508121448204650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387983036981970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7062f25d36dc0f24899947ff13cdd77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aminoAcidAddedValue: 0
+  _aminoAcidSlider: {fileID: 1065288352710078}
+  _ethanolAddedValue: 0
+  _ethanolSlider: {fileID: 1572251429781588}
+  _foodAddedValue: 0
+  _foodSlider: {fileID: 1760800506460208}
+  _waterAddedValue: 0
+  _waterSlider: {fileID: 1069054497853656}
 --- !u!114 &114515212782142148
 MonoBehaviour:
   m_ObjectHideFlags: 1
