@@ -8,6 +8,9 @@ public class ControllerMovement : MonoBehaviour {
     public GameObject Hydrogen, Nitrogen, Oxygen, Carbon, NCHydrogen, NCNitrogen, NCOxygen, NCCarbon;
     public GameObject selectPosition;
 
+    [SerializeField] private GameObject laserobject;
+    private Laser laser;
+
     public Material hydrogenMat, nitrogenMat, carbonMat, oxygenMat, emptyAtom;
 
     public GameObject controller;
@@ -23,6 +26,8 @@ public class ControllerMovement : MonoBehaviour {
 	void Start () {
         skinLength = defaultSkin.Length;
         canvasController = GetComponent<RecipeCanvasController>();
+
+        laser = laserobject.GetComponent<Laser>();
 
         NCHydrogen.SetActive(false);
         NCNitrogen.SetActive(false);
@@ -72,39 +77,52 @@ public class ControllerMovement : MonoBehaviour {
 
                 if (hit.transform.name == "Hydrogen Sphere")
                 {
-                    NCHydrogen.SetActive(true);
-                    NCNitrogen.SetActive(false);
-                    NCOxygen.SetActive(false);
-                    NCCarbon.SetActive(false);
+                    isHeld = (GameObject)Instantiate(Hydrogen, selectPosition.transform.position, Quaternion.identity);
+                    laser.LightBlue();
+                    //NCHydrogen.SetActive(true);
+                    //NCNitrogen.SetActive(false);
+                    //NCOxygen.SetActive(false);
+                    //NCCarbon.SetActive(false);
                 }
-                    //isHeld = (GameObject)Instantiate(Hydrogen, selectPosition.transform.position, Quaternion.identity);
-
-                if (hit.transform.name == "Nitrogen Sphere")
+                
+                else if (hit.transform.name == "Nitrogen Sphere")
                 {
-                    NCHydrogen.SetActive(false);
-                    NCNitrogen.SetActive(true);
-                    NCOxygen.SetActive(false);
-                    NCCarbon.SetActive(false);
-                }
-                //isHeld = (GameObject)Instantiate(Nitrogen, selectPosition.transform.position, Quaternion.identity);
+                    isHeld = (GameObject)Instantiate(Nitrogen, selectPosition.transform.position, Quaternion.identity);
+                    laser.LightOrange();
 
-                if (hit.transform.name == "Oxygen Sphere")
-                {
-                    NCHydrogen.SetActive(false);
-                    NCNitrogen.SetActive(false);
-                    NCOxygen.SetActive(true);
-                    NCCarbon.SetActive(false);
+                    //NCHydrogen.SetActive(false);
+                    //NCNitrogen.SetActive(true);
+                    //NCOxygen.SetActive(false);
+                    //NCCarbon.SetActive(false);
                 }
-                //isHeld = (GameObject)Instantiate(Oxygen, selectPosition.transform.position, Quaternion.identity);
 
-                if (hit.transform.name == "Carbon Sphere")
+                else if(hit.transform.name == "Oxygen Sphere")
                 {
-                    NCHydrogen.SetActive(false);
-                    NCNitrogen.SetActive(false);
-                    NCOxygen.SetActive(false);
-                    NCCarbon.SetActive(true);
+                    isHeld = (GameObject)Instantiate(Oxygen, selectPosition.transform.position, Quaternion.identity);
+                    laser.LightWhite();
+
+                    //NCHydrogen.SetActive(false);
+                    //NCNitrogen.SetActive(false);
+                    //NCOxygen.SetActive(true);
+                    //NCCarbon.SetActive(false);
                 }
-                //isHeld = (GameObject)Instantiate(Carbon, selectPosition.transform.position, Quaternion.identity);
+
+                else if(hit.transform.name == "Carbon Sphere")
+                {
+                    isHeld = (GameObject)Instantiate(Carbon, selectPosition.transform.position, Quaternion.identity);
+                    laser.LightBlack();
+
+                    //NCHydrogen.SetActive(false);
+                    //NCNitrogen.SetActive(false);
+                    //NCOxygen.SetActive(false);
+                    //NCCarbon.SetActive(true);
+                }
+
+                else
+                {
+                    laser.LightRed();
+                }
+                
             }
         }
 
