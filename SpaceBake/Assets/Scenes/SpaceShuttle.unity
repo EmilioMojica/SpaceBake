@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: 172271136}
   m_Layer: 0
   m_Name: Oxygen Atom
-  m_TagString: Oxygen
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2046,7 +2046,7 @@ GameObject:
   - component: {fileID: 363657590}
   m_Layer: 0
   m_Name: Carbon Atom
-  m_TagString: Carbon
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2673,7 +2673,7 @@ GameObject:
   - component: {fileID: 415668265}
   m_Layer: 0
   m_Name: Carbon Atom
-  m_TagString: Carbon
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3140,7 +3140,7 @@ GameObject:
   - component: {fileID: 483303765}
   m_Layer: 0
   m_Name: Hydrogen Atom
-  m_TagString: Hydrogen
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3261,6 +3261,42 @@ Prefab:
     - target: {fileID: 1980005144253996, guid: 850af1bb8217c3844a1214dbe37d798b, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460895607133478, guid: 850af1bb8217c3844a1214dbe37d798b, type: 2}
+      propertyPath: m_TagString
+      value: Atom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000924991858102, guid: 850af1bb8217c3844a1214dbe37d798b, type: 2}
+      propertyPath: m_TagString
+      value: Atom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1663383539903922, guid: 850af1bb8217c3844a1214dbe37d798b, type: 2}
+      propertyPath: m_TagString
+      value: Atom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888239780902914, guid: 850af1bb8217c3844a1214dbe37d798b, type: 2}
+      propertyPath: m_TagString
+      value: Atom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1890495861141646, guid: 850af1bb8217c3844a1214dbe37d798b, type: 2}
+      propertyPath: m_TagString
+      value: Atom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375047425875236, guid: 850af1bb8217c3844a1214dbe37d798b, type: 2}
+      propertyPath: m_TagString
+      value: Atom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262668791013508, guid: 850af1bb8217c3844a1214dbe37d798b, type: 2}
+      propertyPath: m_TagString
+      value: Atom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218394073881824, guid: 850af1bb8217c3844a1214dbe37d798b, type: 2}
+      propertyPath: m_TagString
+      value: Atom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1568461381126468, guid: 850af1bb8217c3844a1214dbe37d798b, type: 2}
+      propertyPath: m_TagString
+      value: Atom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 850af1bb8217c3844a1214dbe37d798b, type: 2}
@@ -4175,7 +4211,7 @@ GameObject:
   - component: {fileID: 644813011}
   m_Layer: 0
   m_Name: Oxygen Atom
-  m_TagString: Oxygen
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5257,7 +5293,7 @@ GameObject:
   - component: {fileID: 857052539}
   m_Layer: 0
   m_Name: Hydrogen Atom
-  m_TagString: Hydrogen
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5662,6 +5698,14 @@ Prefab:
     - target: {fileID: 1015189918639452, guid: 0fa99ed5ad12c194ea5683bf3650e627, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085472483066312, guid: 0fa99ed5ad12c194ea5683bf3650e627, type: 2}
+      propertyPath: m_TagString
+      value: Atom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076821440884168, guid: 0fa99ed5ad12c194ea5683bf3650e627, type: 2}
+      propertyPath: m_TagString
+      value: Atom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fa99ed5ad12c194ea5683bf3650e627, type: 2}
@@ -6147,6 +6191,10 @@ MonoBehaviour:
   controller: {fileID: 1271201040}
   defaultSkin: []
   skinLength: 0
+  prefabWater: {fileID: 1513650917}
+  prefabEthanol: {fileID: 1463904827}
+  prefabOxygen: {fileID: 1286156670}
+  prefabAminoAcid: {fileID: 792104913}
 --- !u!4 &1026717576
 Transform:
   m_ObjectHideFlags: 0
@@ -6554,7 +6602,7 @@ GameObject:
   - component: {fileID: 1123668869}
   m_Layer: 0
   m_Name: Hydrogen Atom
-  m_TagString: Hydrogen
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6818,7 +6866,7 @@ GameObject:
   - component: {fileID: 1196937825}
   m_Layer: 0
   m_Name: Hydrogen Atom
-  m_TagString: Hydrogen
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7626,7 +7674,7 @@ GameObject:
   - component: {fileID: 1417296435}
   m_Layer: 0
   m_Name: Hydrogen Atom
-  m_TagString: Hydrogen
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9573,6 +9621,18 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1934351191296990, guid: eec55a1f436c2fb47859bc6e4710c4ff, type: 2}
+      propertyPath: m_TagString
+      value: Atom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553237977986288, guid: eec55a1f436c2fb47859bc6e4710c4ff, type: 2}
+      propertyPath: m_TagString
+      value: Atom
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272025772394344, guid: eec55a1f436c2fb47859bc6e4710c4ff, type: 2}
+      propertyPath: m_TagString
+      value: Atom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eec55a1f436c2fb47859bc6e4710c4ff, type: 2}
   m_IsPrefabAsset: 0
@@ -10470,7 +10530,7 @@ GameObject:
   - component: {fileID: 2086890876}
   m_Layer: 0
   m_Name: Nitrogen Atom
-  m_TagString: Nitrogen
+  m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
