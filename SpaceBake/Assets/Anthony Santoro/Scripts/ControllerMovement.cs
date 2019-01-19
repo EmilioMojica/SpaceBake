@@ -77,7 +77,7 @@ public class ControllerMovement : MonoBehaviour {
 
                 if (hit.transform.name == "Hydrogen Sphere")
                 {
-                    isHeld = (GameObject)Instantiate(Hydrogen, selectPosition.transform.position, Quaternion.identity);
+                    isHeld = Hydrogen;
                     laser.LightBlue();
                     //NCHydrogen.SetActive(true);
                     //NCNitrogen.SetActive(false);
@@ -87,7 +87,7 @@ public class ControllerMovement : MonoBehaviour {
                 
                 else if (hit.transform.name == "Nitrogen Sphere")
                 {
-                    isHeld = (GameObject)Instantiate(Nitrogen, selectPosition.transform.position, Quaternion.identity);
+                    isHeld = Nitrogen;
                     laser.LightOrange();
 
                     //NCHydrogen.SetActive(false);
@@ -98,7 +98,7 @@ public class ControllerMovement : MonoBehaviour {
 
                 else if(hit.transform.name == "Oxygen Sphere")
                 {
-                    isHeld = (GameObject)Instantiate(Oxygen, selectPosition.transform.position, Quaternion.identity);
+                    isHeld = Oxygen;
                     laser.LightWhite();
 
                     //NCHydrogen.SetActive(false);
@@ -109,7 +109,7 @@ public class ControllerMovement : MonoBehaviour {
 
                 else if(hit.transform.name == "Carbon Sphere")
                 {
-                    isHeld = (GameObject)Instantiate(Carbon, selectPosition.transform.position, Quaternion.identity);
+                    isHeld = Carbon;
                     laser.LightBlack();
 
                     //NCHydrogen.SetActive(false);
@@ -118,11 +118,11 @@ public class ControllerMovement : MonoBehaviour {
                     //NCCarbon.SetActive(true);
                 }             
             }
+        }
 
-            if (isHeld == null)
-            {
-                laser.LightRed();
-            }
+        if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger))
+        {
+            laser.LightRed();
         }
 
         if (OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger)) //(Input.GetMouseButtonUp(0))//OVRInput.GetUp(OVRInput.Button.One))
