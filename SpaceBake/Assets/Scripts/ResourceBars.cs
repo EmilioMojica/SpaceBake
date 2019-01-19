@@ -74,10 +74,10 @@ public class ResourceBars : MonoBehaviour
         if (_aminoAcidCurValue >= _aminoAcidMaxValue)
             _aminoAcidCurValue = _aminoAcidMaxValue;
 
-        _foodCurValue -= Time.deltaTime;
-        _waterCurValue -= Time.deltaTime;
-        _ethanolCurValue -= Time.deltaTime;
-        _aminoAcidCurValue -= Time.deltaTime;
+        _foodCurValue -= Time.deltaTime * 2.0f;
+        _waterCurValue -= Time.deltaTime * 1.25f;
+        _ethanolCurValue -= Time.deltaTime * 0.5f;
+        _aminoAcidCurValue -= Time.deltaTime * 0.75f;
     }
 
     void CalculateWin()
