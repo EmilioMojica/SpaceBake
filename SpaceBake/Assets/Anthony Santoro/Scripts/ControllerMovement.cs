@@ -5,7 +5,7 @@ using UnityEngine;
 public class ControllerMovement : MonoBehaviour {
 
     public GameObject isHeld, isTargetted;
-    public GameObject Hydrogen, Nitrogen, Oxygen, Carbon;
+    public GameObject Hydrogen, Nitrogen, Oxygen, Carbon, NCHydrogen, NCNitrogen, NCOxygen, NCCarbon;
     public GameObject selectPosition;
 
     public Material hydrogenMat, nitrogenMat, carbonMat, oxygenMat, emptyAtom;
@@ -17,10 +17,18 @@ public class ControllerMovement : MonoBehaviour {
 
     private int skinCheck;
 
+    private RecipeCanvasController canvasController;
+
 	// Use this for initialization
 	void Start () {
         skinLength = defaultSkin.Length;
-	}
+        canvasController = GetComponent<RecipeCanvasController>();
+
+        NCHydrogen.SetActive(false);
+        NCNitrogen.SetActive(false);
+        NCOxygen.SetActive(false);
+        NCCarbon.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -62,17 +70,41 @@ public class ControllerMovement : MonoBehaviour {
             {
                 Debug.Log("You selected the " + hit.transform.name); // ensure you picked right object
 
-                if(hit.transform.name == "Hydrogen Sphere")
-                    isHeld = (GameObject)Instantiate(Hydrogen, selectPosition.transform.position, Quaternion.identity);
+                if (hit.transform.name == "Hydrogen Sphere")
+                {
+                    NCHydrogen.SetActive(true);
+                    NCNitrogen.SetActive(false);
+                    NCOxygen.SetActive(false);
+                    NCCarbon.SetActive(false);
+                }
+                    //isHeld = (GameObject)Instantiate(Hydrogen, selectPosition.transform.position, Quaternion.identity);
 
                 if (hit.transform.name == "Nitrogen Sphere")
-                    isHeld = (GameObject)Instantiate(Nitrogen, selectPosition.transform.position, Quaternion.identity);
+                {
+                    NCHydrogen.SetActive(false);
+                    NCNitrogen.SetActive(true);
+                    NCOxygen.SetActive(false);
+                    NCCarbon.SetActive(false);
+                }
+                //isHeld = (GameObject)Instantiate(Nitrogen, selectPosition.transform.position, Quaternion.identity);
 
                 if (hit.transform.name == "Oxygen Sphere")
-                    isHeld = (GameObject)Instantiate(Oxygen, selectPosition.transform.position, Quaternion.identity);
+                {
+                    NCHydrogen.SetActive(false);
+                    NCNitrogen.SetActive(false);
+                    NCOxygen.SetActive(true);
+                    NCCarbon.SetActive(false);
+                }
+                //isHeld = (GameObject)Instantiate(Oxygen, selectPosition.transform.position, Quaternion.identity);
 
                 if (hit.transform.name == "Carbon Sphere")
-                    isHeld = (GameObject)Instantiate(Carbon, selectPosition.transform.position, Quaternion.identity);
+                {
+                    NCHydrogen.SetActive(false);
+                    NCNitrogen.SetActive(false);
+                    NCOxygen.SetActive(false);
+                    NCCarbon.SetActive(true);
+                }
+                //isHeld = (GameObject)Instantiate(Carbon, selectPosition.transform.position, Quaternion.identity);
             }
         }
 
@@ -117,6 +149,24 @@ public class ControllerMovement : MonoBehaviour {
                 }   
 
             }
-        }   
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) //(OVRInput.Button)//Input.GetMouseButtonDown(0))//OVRInput.GetDown(OVRInput.Button.One))
+        {
+            if (Physics.Raycast(controller.transform.position, controller.transform.forward, out hit, 100.0f))
+            {
+                Debug.Log("You selected the " + hit.transform.name); // ensure you picked right object
+
+                if (hit.transform.name == "Back Button")
+                {
+                    canvasController.Down();
+                }
+
+                if (hit.transform.name == "Forward Button")
+                {
+                    canvasController.Up();
+                }  
+            }
+        }
     }
 }
